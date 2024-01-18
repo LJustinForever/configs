@@ -1,0 +1,51 @@
+[credential "https://tcgit.atea.lt"]
+	provider = generic
+[core]
+	editor = micro
+[user]
+	name = justas.lisajus
+	email = justas.lisajus@atea.lt
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
+[diff]
+	guitool = vscode
+	tool = vsdiffmerge
+[difftool "vscode"]
+	path = C:/Users/justas.lisajus/AppData/Local/Programs/Microsoft VS Code/Code.exe
+	cmd = \"C:/Users/justas.lisajus/AppData/Local/Programs/Microsoft VS Code/Code.exe\" --new-window --wait --diff \"$LOCAL\" \"$REMOTE\"
+[merge]
+	guitool = vscode
+	tool = vsdiffmerge
+[mergetool "vscode"]
+	path = C:/Users/justas.lisajus/AppData/Local/Programs/Microsoft VS Code/Code.exe
+	cmd = \"C:/Users/justas.lisajus/AppData/Local/Programs/Microsoft VS Code/Code.exe\" --new-window --wait --merge \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+[alias]
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %Cred%an%C(reset)%C(auto)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+	lg = lg1
+	unstaged = diff --name-only
+	unstaged-p = diff
+	staged = diff --cached --name-only
+	staged-p = diff --cached
+	sync = !git pull && git push
+[http]
+	sslVerify = true
+[credential "http://tcgit.atea.lt"]
+	provider = generic
+[difftool]
+	prompt = true
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+	keepBackup = false
+[mergetool]
+	prompt = true
+[mergetool "vsdiffmerge"]
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
+	keepBackup = false
+	trustExitCode = true
